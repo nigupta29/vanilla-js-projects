@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background Color Changer | JS Projects</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="../global-style.css" />
+    <script src="script.js" defer></script>
+    <style>
+      html {
+        background-color: #f6f6f6;
+      }
+      .content {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+      }
+      @media (min-width: 576px) {
+        .button-grid {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+        }
+        button {
+          width: 30%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <section class="content">
+        <h2>Background Color Changer</h2>
+        <h6>Choose a colour from the list below!</h6>
+      </section>
+      <section class="button-grid"></section>
+    </main>
+  </body>
+  <script>
+    'use strict'
+
+    const colors = {
+      AliceBlue: '#F0F8FF',
+      'Dark Gray': '#333333',
+      Blue: '#0000FF',
+      Coral: '#FF7F50',
+      FireBrick: '#B22222',
+      Gray: '#808080',
+      Green: '#008000',
+      HotPink: '#FF69B4',
+      'Lemon Chiffon': '#FFFACD',
+      Purple: '#800080',
+      Red: '#FF0000',
+      Violet: '#7F00FF',
+    }
+
+    const btnGrid = document.querySelector('.button-grid')
+    const fullBody = document.querySelector('html')
+
+    const setBackgroundColor = function (event) {
+      const bgColor = event.target.dataset.color
+      fullBody.style.backgroundColor = bgColor
+    }
+
+    for (const [color, hexValue] of Object.entries(colors)) {
+      const buttonElement = document.createElement('button')
+      buttonElement.innerText = color
+      buttonElement.dataset.color = hexValue
+      buttonElement.style.borderColor = hexValue
+      buttonElement.style.borderWidth = '2px'
+
+      buttonElement.onclick = setBackgroundColor
+      btnGrid.appendChild(buttonElement)
+    }
+  </script>
+</html>
