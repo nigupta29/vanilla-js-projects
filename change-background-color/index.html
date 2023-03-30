@@ -41,6 +41,19 @@
         <h6>Choose a colour from the list below!</h6>
       </section>
       <section class="button-grid"></section>
+      <form class="content">
+        <label for="hexValue">Instead, type the desired hex value.</label>
+        <input
+          type="text"
+          id="hexValue"
+          name="hexValue"
+          required
+          autocomplete="off"
+        />
+        <small>Don't add # in the box</small>
+        <button type="submit" class="secondary">Change Background!</button>
+      </form>
+      <a href="/" role="button" class="contrast">Back to Home</a>
     </main>
   </body>
   <script>
@@ -63,10 +76,15 @@
 
     const btnGrid = document.querySelector('.button-grid')
     const fullBody = document.querySelector('html')
+    const form = document.querySelector('form')
+    const hexValueInput = document.querySelector('#hexValue')
 
-    const setBackgroundColor = function (event) {
+    const setBackgroundColor = function (hexValue) {
+      fullBody.style.backgroundColor = hexValue
+    }
+    const setBackgroundColorForPresets = function (event) {
       const bgColor = event.target.dataset.color
-      fullBody.style.backgroundColor = bgColor
+      setBackgroundColor(bgColor)
     }
 
     for (const [color, hexValue] of Object.entries(colors)) {
@@ -76,8 +94,20 @@
       buttonElement.style.borderColor = hexValue
       buttonElement.style.borderWidth = '2px'
 
-      buttonElement.onclick = setBackgroundColor
+      buttonElement.onclick = setBackgroundColorForPresets
       btnGrid.appendChild(buttonElement)
+    }
+
+    form.onsubmit = event => {
+      event.preventDefault()
+      const hexValue = `#${event.target.hexValue.value}`
+
+      if (hexValue.length === 7) {
+        setBackgroundColor(hexValue)
+        hexValueInput.ariaInvalid = 'false'
+      } else {
+        hexValueInput.ariaInvalid = 'true'
+      }
     }
   </script>
 </html>
