@@ -7,6 +7,7 @@ Currently using for quick CSS templates.
 
 1. Background Color Change Project
 2. Random Quotes Project
+3. Countdown Timer
 
 ### Resources
 
