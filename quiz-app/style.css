@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  align-items: center;
+  background-color: #e6e8e6;
+  display: flex;
+  font-family: 'Inter Tight', sans-serif;
+  justify-content: center;
+  min-height: 100vh;
+}
+#quiz {
+  background-color: #ffffff;
+  width: 500px;
+  border-radius: 0.75rem;
+  overflow: hidden;
+
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+}
+.quiz-header {
+  padding: 2rem;
+}
+#choices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  margin-top: 1rem;
+}
+#choices li {
+  align-items: center;
+  display: flex;
+  line-height: 1.5rem;
+}
+#choices > li > input[type='radio'] {
+  cursor: pointer;
+}
+#choices > li > span {
+  margin-left: 0.5rem;
+}
+#submit {
+  cursor: pointer;
+  width: 100%;
+  padding: 1rem 2rem;
+  font-size: medium;
+  background-color: #f15025;
+  color: #ffffff;
+  border: 0;
+}
+#submit:hover {
+  background-color: #f36641;
+}

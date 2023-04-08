@@ -16,6 +16,11 @@ const projects = [
     desc: "Let's check the remaining time until the following New Year.",
     folderName: 'countdown-timer',
   },
+  {
+    name: 'Quiz App',
+    desc: "Test your animal knowledge with this fun quiz app! 🦁🐘🐅",
+    folderName: 'quiz-app',
+  },
 ]
 
 const showcaseList = document.querySelector('#showcase-list')
