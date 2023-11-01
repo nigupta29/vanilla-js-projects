@@ -17,7 +17,7 @@ function createArticleElement({ name, desc, folderName }) {
       >
       Code ↗
       </a>
-    <a href="/${folderName}/index.html" class="btn btn-preview">
+    <a href="${folderName}/index.html" class="btn btn-preview">
     Preview ↗
     </a>
     </div>
