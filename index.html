@@ -4,36 +4,35 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JS Projects</title>
+    <title>Vanilla JS - Projects</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
+      rel="icon"
+      href="https://cdn4.iconfinder.com/data/icons/general-office/91/General_Office_08-512.png"
     />
-    <link rel="stylesheet" href="global-style.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="container mt-5">
-    <main>
-      <div class="mb-5">
-        <h1 class="display-5">JS Projects List</h1>
-        <p class="text-body-secondary">
-          I've created a some small projects to demonstrate my HTML, CSS, and
+  <body>
+    <div class="container">
+      <header>
+        <h1 class="header-heading">JS Projects List</h1>
+        <p class="header-text">
+          I've created some small projects to demonstrate my HTML, CSS, and
           Javascript abilities as a web development novice. View my creations to
-          find inspiration for your own works! Currently using Bootstrap v5.3
-          for quick CSS templates.
+          find inspiration for your own works!
         </p>
-      </div>
-      <div id="showcase-list"></div>
-    </main>
-    <footer>
-      <h6>
-        Made by
+      </header>
+      <main>
+        <section id="showcase-list" class="grid"></section>
+      </main>
+    </div>
+    <footer class="footer">
+      <h5>
+        Made with
         <a href="https://github.com/nigupta29" target="_blank">
           Nikhil Gupta
         </a>
-      </h6>
-      <small>© 2023 Nikhil Gupta. All rights reserved.</small>
+      </h5>
+      <p>© 2023 Nikhil Gupta. All rights reserved.</p>
     </footer>
 
     <script
@@ -41,6 +40,6 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script src="script.js" defer></script>
+    <script type="module" src="script.js" defer></script>
   </body>
 </html>

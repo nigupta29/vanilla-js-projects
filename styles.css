@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.container {
+  margin-top: 1.25rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1360px;
+  padding: 25px;
+}
+
+header {
+  padding: 0.25rem 0;
+}
+
+.header-heading {
+  margin-bottom: 0.5rem;
+}
+
+.header-text {
+  font-size: larger;
+  color: #3e3e3e;
+}
+
+#showcase-list {
+  margin: 1.5rem auto;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  min-height: 13rem;
+  padding: 0.75rem;
+  border: 2px solid black;
+  box-shadow: 4px 4px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-body {
+  margin-top: 0.5rem;
+}
+
+.card-body-header {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.card-text {
+  margin: 0.5rem auto;
+  font-size: 1rem;
+  color: #3e3e3e;
+}
+
+.card-btn-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.btn {
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+}
+
+.btn-github {
+  color: black;
+  background-color: #c6dbbd;
+}
+
+.btn-preview {
+  color: white;
+  background-color: #739072;
+}
+
+.btn:hover {
+  box-shadow: 2px 2px black;
+}
+
+footer {
+  padding: 2.5rem;
+  background-color: #ece3ce;
+  text-align: center;
+}
+
+footer h5 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+footer a {
+  color: #3a4d39;
+}
+
+footer p {
+  font-size: 1rem;
+  color: #3e3e3e;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-top: 0;
+    padding: 30px;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    margin-top: 0;
+    padding: 35px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

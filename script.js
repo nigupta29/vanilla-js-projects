@@ -1,83 +1,39 @@
 'use script'
 
-const projects = [
-  {
-    name: 'Background Color Changer',
-    desc: 'Transform your screen with dynamic color-changing backgrounds. Try it now!',
-    folderName: 'change-background-color',
-  },
-  {
-    name: 'Random Quotes',
-    desc: 'Discover new perspectives: Click to explore our random quote generator!',
-    folderName: 'random-quotes',
-  },
-  {
-    name: 'Countdown Timer',
-    desc: "Let's check the remaining time until the following New Year.",
-    folderName: 'countdown-timer',
-  },
-  {
-    name: 'Random Quotes',
-    desc: 'Discover new perspectives: Click to explore our random quote generator!',
-    folderName: 'random-quotes',
-  },
-  {
-    name: 'Countdown Timer',
-    desc: "Let's check the remaining time until the following New Year.",
-    folderName: 'countdown-timer',
-  },
-  {
-    name: 'Random Quotes',
-    desc: 'Discover new perspectives: Click to explore our random quote generator!',
-    folderName: 'random-quotes',
-  },
-  {
-    name: 'Countdown Timer',
-    desc: "Let's check the remaining time until the following New Year.",
-    folderName: 'countdown-timer',
-  },
-  {
-    name: 'Quiz App',
-    desc: 'Test your animal knowledge with this fun quiz app! 🦁🐘🐅',
-    folderName: 'quiz-app',
-  },
-]
-
-const showcaseList = document.querySelector('#showcase-list')
+import { projects } from './data.js'
 
 function createArticleElement({ name, desc, folderName }) {
   const articleElement = `
-  <article class="col-sm-12 col-md-6 col-lg-4">
-      <div class="card">
-        <div class="card-header fw-bold h5">
-          ${name}
-        </div>
-        <div class="card-body">
-          <p class="card-text">${desc}</p>
-          <a
-            href="/${folderName}/index.html"
-            role="button"
-            class="btn btn-success"
-          >
-            Preview 🚀
-          </a>
-        </div>
-      </div>
-    </article>
+  <div class="card">
+  <div class="card-body">
+  <div class="card-body-header">${name}</div>
+  <p class="card-text">${desc}</p>
+  </div>
+  <div class="card-btn-group">
+  <a
+  href="https://github.com/nigupta29/vanilla-js-projects/tree/main/${folderName}"
+      class="btn btn-github"
+      target="__blank__"
+      >
+      Code ↗
+      </a>
+    <a href="/${folderName}/index.html" class="btn btn-preview">
+    Preview ↗
+    </a>
+    </div>
+</div>
   `
 
   return articleElement
 }
 
 function createShowcaseList(projects) {
-  let grid = document.createElement('div')
-  grid.classList.add('row', 'row-gap-4')
+  const showcaseList = document.querySelector('#showcase-list')
 
-  projects.forEach((project, index) => {
+  projects.forEach(project => {
     const articleElement = createArticleElement(project)
-    grid.innerHTML += articleElement
+    showcaseList.innerHTML += articleElement
   })
-  showcaseList.appendChild(grid)
 }
 
 createShowcaseList(projects)
