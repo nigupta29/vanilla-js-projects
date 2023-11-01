@@ -2,6 +2,9 @@
 
 import { projects } from './data.js'
 
+const currentLocation = window.location.href.replace('index.html', '')
+const githubRepo = 'https://github.com/nigupta29/vanilla-js-projects/tree/main/'
+
 function createArticleElement({ name, desc, folderName }) {
   const articleElement = `
   <div class="card">
@@ -11,13 +14,13 @@ function createArticleElement({ name, desc, folderName }) {
   </div>
   <div class="card-btn-group">
   <a
-  href="https://github.com/nigupta29/vanilla-js-projects/tree/main/${folderName}"
+  href="${githubRepo}${folderName}"
       class="btn btn-github"
       target="__blank__"
       >
       Code ↗
       </a>
-    <a href="${folderName}/index.html" class="btn btn-preview">
+    <a href="${currentLocation}${folderName}/index.html" class="btn btn-preview">
     Preview ↗
     </a>
     </div>
